@@ -8,7 +8,9 @@ snippet rdm
 		transformations: [
 			{
 				type: '${3:initApp}',
-				reducer: ${4:(state, { payload }) => state.set('key', payload)},
+				reducer: (state, { payload }) => {
+					return state.set('${4:someKey}', payload);
+				}
 			}
 		],
 	});
@@ -16,6 +18,8 @@ snippet rdm
 	export default module;
 snippet rdmt
 	{
-		type: '${1}',
-		reducer: ${2},
+		type: '${1:actionType}',
+		reducer: (state, { payload }) => {
+			return state.set('${4:someKey}', payload);
+		}
 	}

@@ -2,18 +2,20 @@ snippet rdm
 	import { createModule } from 'redux-modules';
 
 	const module = createModule({
-		name: '${0}',
-		selector: state => state.${1},
+		name: '${1:app}',
+		selector: state => state.${2:app},
 		initalState: {},
 		transformations: [
 			{
-				type: '${2}',
-				reducer: ${3},
+				type: '${3:initApp}',
+				reducer: ${4:(state, { payload }) => state.set('key', payload)},
 			}
 		],
 	});
+
+	export default module;
 snippet rdmt
 	{
-		type: '${0}',
-		reducer: ${1},
+		type: '${1}',
+		reducer: ${2},
 	}

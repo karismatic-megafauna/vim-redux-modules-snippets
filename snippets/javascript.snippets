@@ -1,0 +1,18 @@
+snippet rdm
+				import { createModule } from 'redux-modules';
+
+				const module = createModule({
+					name: '${1}',
+					selector: state => state.${1},
+					transformations: [
+						{
+							type: '${2}',
+							reducer: '${3},
+						}
+					],
+				});
+snippet rdmt
+				{
+					type: '${1}',
+					reducer: '${2},
+				}
